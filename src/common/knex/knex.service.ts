@@ -12,7 +12,7 @@ export class KnexService {
   constructor() {
     // 根據你的資料庫配置進行修改
     this.knexInstance = knex({
-      client: "mysql", // 或 'mysql2'，根據你的資料庫
+      client: "mysql2", // 或 'mysql2'，根據你的資料庫
       connection: {
         host: "localhost",
         user: "your-username",
