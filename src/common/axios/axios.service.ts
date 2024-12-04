@@ -12,7 +12,7 @@ export class AxiosService {
   constructor(private readonly httpService: HttpService) {
     this.httpService.axiosRef.interceptors.request.use(
       (config) => {
-        config.headers["Authorization"] = "Bearer "
+        // config.headers["Authorization"] = "Bearer "
         return config
       },
       (error) => {
