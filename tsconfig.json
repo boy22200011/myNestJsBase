@@ -16,6 +16,13 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true,
+  },
+  "include": [
+    "src/**/*.ts",
+    "config.development.json",
+    "config.production.json"
+  ],
+  "exclude": ["node_modules"]
 }
