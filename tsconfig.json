@@ -21,6 +21,8 @@
   },
   "include": [
     "src/**/*.ts",
+    ".env.development",
+    ".env.production",
     "config.development.json",
     "config.production.json"
   ],

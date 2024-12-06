@@ -6,8 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "cross-env NODE_ENV=development nest build",
-    "build:prod": "cross-env NODE_ENV=production nest build",
+    "build": "cross-env NODE_ENV=development nest build && pnpm copy-dev-config",
+    "build:prod": "cross-env NODE_ENV=production nest build && pnpm copy-prod-config",
     "start": "cross-env NODE_ENV=development nest start",
     "start:prod": "cross-env NODE_ENV=production nest start --prod",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -16,7 +16,9 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "copy-dev-config":"copyfiles .env.development dist/",
+    "copy-prod-config":"copyfiles .env.production dist/"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -42,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "axios": "^1.7.8",
+    "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "eslint": "^8.0.0",
