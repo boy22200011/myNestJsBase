@@ -11,6 +11,7 @@ async function bootstrap() {
   } else {
     // 開發環境的配置
   }
+  console.log("當前環境", process.env.NODE_ENV)
   await app.listen(process.env.PORT ?? 5000)
   console.log(`Server listening on ${process.env.PORT}`)
 }
