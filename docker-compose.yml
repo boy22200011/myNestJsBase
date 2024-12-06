@@ -11,6 +11,6 @@ services:
     environment:
       - NODE_ENV=development
     volumes:
-      - .:/app
+      - .:/app-volumes
     command: ["node", "dist/src/main.js"]
     restart: unless-stopped
