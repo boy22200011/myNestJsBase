@@ -12,7 +12,7 @@ export class KnexService {
 
   constructor() {
     const env = process.env.NODE_ENV || "development"
-    const configFilePath = path.join(__dirname, `config.${env}.json`)
+    const configFilePath = path.join(__dirname, `../../../config.${env}.json`)
     const config = JSON.parse(fs.readFileSync(configFilePath, "utf8"))
     // 根據你的資料庫配置進行修改
     this.knexInstance = knex(config.db.mysql)
