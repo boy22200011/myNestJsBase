@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  nestjs-app:
+    build: .
+    container_name: nestjs-app
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+    command: ["node", "dist/src/main.js"]
+    restart: unless-stopped
